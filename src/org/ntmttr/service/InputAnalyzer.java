@@ -43,19 +43,9 @@ public class InputAnalyzer {
             }
         }
         if (isRome){
-            if (result%1 != 0){
-                return "дробное число выходит за рамки области определения множества римских чисел";
-            }
-            if (result <= 0){
-                return "число меньше 1 выходит за рамки области определения множества римских чисел";
-            }
-            return Converter.arabicToRoman((int)Math.round(result));
+            return Converter.arabicToRoman((int)Math.floor(result));
         } else {
-            if (result%1 == 0.0){
-                return "" + (int)Math.round(result);
-            } else {
-                return "" + result;
-            }
+            return "" + (int)Math.floor(result);
         }
     }
 
